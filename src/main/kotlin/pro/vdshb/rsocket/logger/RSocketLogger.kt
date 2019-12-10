@@ -51,6 +51,25 @@ class RSocketLogger(val rSocket: RSocket) : RSocket {
         return rSocket.dispose()
     }
 
+    override fun availability(): Double {
+        return rSocket.availability()
+    }
+
+    override fun isDisposed(): Boolean {
+        return rSocket.isDisposed()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return rSocket.equals(other)
+    }
+
+    override fun hashCode(): Int {
+        return rSocket.hashCode()
+    }
+
+    override fun toString(): String {
+        return rSocket.toString()
+    }
 }
 
 class LogRequestChannelPayloadSubscriber(subscriber: Subscriber<in Payload>?) : ProxySubscriber<Payload>(subscriber) {
