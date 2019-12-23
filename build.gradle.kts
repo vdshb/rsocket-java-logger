@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "pro.vdshb"
-version = "0.7"
+version = "0.8.1"
 
 repositories {
     mavenCentral()

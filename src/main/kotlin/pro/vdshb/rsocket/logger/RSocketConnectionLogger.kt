@@ -29,6 +29,12 @@ class DuplexConnectionLogger(val duplexConnection: DuplexConnection) : DuplexCon
         return duplexConnection.dispose()
     }
 
+    override fun isDisposed(): Boolean {
+        val result = duplexConnection.isDisposed()
+        log.info("RSocket Connection. Is Disposed Ask. Answer: $result")
+        return result
+    }
+
 }
 
 class LogSendSubscriber(subscriber: Subscriber<in ByteBuf>?) : ProxySubscriber<ByteBuf>(subscriber) {
